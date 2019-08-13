@@ -1,0 +1,106 @@
+
+body {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 2;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #666666;
+  background: #fff; }
+
+#page {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  .offcanvas #page {
+    overflow: hidden;
+    position: absolute; }
+    .offcanvas #page:after {
+      -webkit-transition: 2s;
+      -o-transition: 2s;
+      transition: 2s;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 101;
+      background: rgba(0, 0, 0, 0.7);
+      content: ""; }
+
+a {
+  color: #F6490D;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  a:hover, a:active, a:focus {
+    color: #F6490D;
+    outline: none;
+    text-decoration: none; }
+
+p {
+  margin-bottom: 20px; }
+
+h1, h2, h3, h4, h5, h6, figure {
+  color: #000;
+  font-weight: 400;
+  margin: 0 0 20px 0; }
+
+::-webkit-selection {
+  color: #fff;
+  background: #F6490D; }
+
+::-moz-selection {
+  color: #fff;
+  background: #F6490D; }
+
+::selection {
+  color: #fff;
+  background: #F6490D; }
+
+
+#colorlib-breadcrumbs {
+  padding: 3em 0;
+  clear: both;
+  background: #987FDC;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0; }
+  #colorlib-breadcrumbs .breadcrumbs h2 {
+    color: #000;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    font-size: 24px;
+    font-weight: 700; }
+  #colorlib-breadcrumbs .breadcrumbs p {
+    margin-bottom: 0;
+    font-size: 13px; }
+
+.form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  font-size: 16px !important;
+  font-weight: 300;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px; }
+  .form-control:focus, .form-control:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.8); }
+
+.form-group {
+  margin-bottom: 30px; }
+  .form-group .btn-modify {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 15px; }

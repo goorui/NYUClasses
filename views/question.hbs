@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuestionDetail</title>
+  <script>
+function validateForm() {
+  const x = document.forms["myForm"]["text"].value;
+  const y = document.forms["myForm"]["name"].value;
+  if(x==""){
+    alert("Answer content can't be empty!");
+    return false;
+  }
+  if(y==""){
+    alert("Please fill in your name!");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+  <aside id="colorlib-breadcrumbs">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 breadcrumbs text-center">
+              <h1>NYU Piazza - Question Page</h1>
+              <p>
+                <span>
+                  <a href="{{URL}}/home" class="btn btn-info">Home</a>
+                </span>
+                <span>
+                  <a href="{{URL}}/api/users/logout" class="btn btn-dark">Log Out</a>
+                </span>
+            </p>
+            </div>
+          </div>
+        </div>
+  </aside>
+  <h1>
+    {{question.text}}<br>
+  </h1>
+  <form name="myForm" action="{{URL}}/home/{{courseslug}}/{{question.slug}}" method="POST" onsubmit="return validateForm()">
+    <h2>Add an answer:</h2>
+    <textarea name="text" rows="10px" cols="50px"></textarea><br><br>
+    <h3>Your Name:
+    <input type="text" name="name">&nbsp;
+    <button type="submit" class="btn btn-primary">Answer!</button></h3>
+  </form><br>
+  <p>
+    {{#if question.answers}}
+      <ul>
+      {{#each question.answers as |a|}}
+      <li>
+        <h4>{{a.text}}</h4>
+        <p>by {{a.name}}</p><br>
+      </li>
+      {{/each}}
+      </ul>
+      {{else}}
+      <h2>~~ No answers yet! ~~</h2>
+      {{/if}}
+  </p>
+</body>
+</html>

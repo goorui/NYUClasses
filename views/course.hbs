@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CourseDetail</title>
+  <script>
+function validateForm() {
+  const x = document.forms["myForm"]["text"].value;
+  const y = document.forms["myForm"]["name"].value;
+  if(x==""){
+    alert("Question content can't be empty!");
+    return false;
+  }
+  if(y==""){
+    alert("Please fill in your name!");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+  <aside id="colorlib-breadcrumbs">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 breadcrumbs text-center">
+              <h1>NYU Piazza - {{course.name}} {{course.code}}</h1>
+              <p>
+                <span>
+                  <a href="{{URL}}/home" class="btn btn-info">Home</a>
+                </span>
+                <span>
+                  <a href="{{URL}}/api/users/logout" class="btn btn-dark">Log Out</a>
+                </span>
+            </p>
+            </div>
+          </div>
+        </div>
+  </aside>
+  <p>
+    <form name="myForm" action="{{URL}}/home/{{course.slug}}" method="POST" onsubmit="return validateForm()">
+      <h2>Ask A Question:</h2><br>
+      <textarea name="text" rows="10px" cols="50px"></textarea><br><br>
+      <h3>Your Name:&nbsp;<input type="text" name="name">&nbsp;
+      <button type="submit" class="btn btn-primary">Ask!</button></h3>
+    </form>
+    <br>
+    <ul>
+      {{#if course.questions}}
+      {{#each course.questions as |q|}}
+      <li>
+        <h4><a href="{{URL}}/home/{{../course.slug}}/{{q.slug}}">{{q.text}}</a></h4>
+        <p>by {{q.name}}</p><br>
+      </li>
+      {{/each}}
+      {{else}}
+      <h2>~~ No questions yet! ~~</h2>
+      {{/if}}
+    </ul>
+  </p>
+  <br><br>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "goorui-final-project",
+  "version": "1.0.0",
+  "description": "The content below is an example project proposal / requirements document. Replace the text below the lines marked \"__TODO__\" with details specific to your project. Remove the \"TODO\" lines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0480-008-spring-2019/goorui-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0480-008-spring-2019/goorui-final-project/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0480-008-spring-2019/goorui-final-project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "expres": "0.0.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.16.1",
+    "fs": "0.0.1-security",
+    "hbs": "^4.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongo-sanitize": "^1.0.1",
+    "mongoose": "^5.4.22",
+    "mongoose-url-slugs": "^1.0.2",
+    "nodemon": "^1.18.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

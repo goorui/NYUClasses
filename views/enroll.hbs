@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>add-course</title>
+<script>
+function validateForm() {
+  const x = document.forms["myForm"]["courseCode"].value;
+  const y = document.forms["myForm"]["courseName"].value;
+  if(x==""){
+    alert("Course Code can't be empty!");
+    return false;
+  }
+  if(y==""){
+    alert("Course Name can't be empty!");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+  <aside id="colorlib-breadcrumbs">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12 breadcrumbs text-center">
+  						<h1>NYU Piazza</h1>
+  						<p>
+                <span>
+                  <a href="{{URL}}/home" class="btn btn-info">Home</a>
+                </span>
+                <span>
+                  <a href="{{URL}}/api/users/logout" class="btn btn-dark">Log Out</a>
+                </span>
+            </p>
+  					</div>
+  				</div>
+  			</div>
+  </aside>
+<p>
+  <form name="myForm" action="{{URL}}/home" method="POST" class="form-control" onsubmit="return validateForm()">
+    <h2>Add A Class</h2><br>
+    <p>
+    Course Code: <input type="text" name="courseCode"> &nbsp;
+    Course Name: <input type="text" name="courseName"> &nbsp;
+    <input class="btn btn-primary" type="submit" value="Add">
+    </p>
+  </form>
+</p>
+</body>
+</html>

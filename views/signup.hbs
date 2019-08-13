@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <script>
+function validateForm() {
+  const x = document.forms["myForm"]["username"].value;
+  const y = document.forms["myForm"]["realname"].value;
+  const z = document.forms["myForm"]["password"].value;
+  if(x==""){
+    alert("Username can't be empty!");
+    return false;
+  }
+  if(y==""){
+    alert("Real Name can't be empty!");
+    return false;
+  }
+  if(z==""){
+    alert("Password can't be empty!");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+  <aside id="colorlib-breadcrumbs">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 breadcrumbs text-center">
+              <h1>NYU Piazza</h1>
+              <h4>Welcome, New User!</h4>
+            </div>
+          </div>
+        </div>
+  </aside>
+<h2>
+  <br>
+  <form name="myForm" action="{{URL}}/api/users" method="POST" onsubmit="return validateForm()">
+    Username (NetID): <br>
+    <input type = "text" name = 'username'/><br><br>
+    Your Name: <br>
+    <input type = "text" name = 'realname'/><br><br>
+    Password: <br>
+    <input type = "text" name = 'password'/><br><br>
+    <input type="submit" value="Sign Up" class="btn btn-success"/><br>
+  </form>
+</h2>
+</body>
+</html>
